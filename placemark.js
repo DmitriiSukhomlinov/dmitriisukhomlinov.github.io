@@ -4,13 +4,17 @@ var map
 
 function init() {
 
+	var currentLocation = window.location;
+	var ref = currentLocation.href
+	var value = window.location.search.substring(1);
+
   map = new ymaps.Map("map", {
     center: [55.030199, 82.920430],
     zoom: 10,
     controls: ['zoomControl','geolocationControl']
   });
 
-  updatePoints("hdpe_ldpe_pp_ps_fe-cans_alu-aluminum-cans")
+  updatePoints(window.location.search.substring(1))
 }
 
 function updatePoints(newPointsType) {
